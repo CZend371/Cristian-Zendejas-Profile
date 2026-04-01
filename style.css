@@ -68,23 +68,16 @@ body {
   margin-bottom: 2rem;
 }
 
-/* ── Profile Photo Placeholder ── */
+/* ── Profile Photo ── */
 .profile-photo {
-  width: 128px;
-  height: 128px;
+  width: 220px;
+  height: 300px;
   border-radius: 1rem;
-  background-color: var(--bg-surface);
-  border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
   margin: 0 auto;
-  color: var(--text-muted);
-}
-
-.profile-photo svg {
-  width: 52px;
-  height: 52px;
+  border: 2px solid var(--border);
 }
 
 /* ── Shared section styles ── */
@@ -198,6 +191,10 @@ body {
   font-size: 1.0625rem;
   color: var(--text);
   line-height: 1.8;
+}
+
+.bio-text + .bio-text {
+  margin-top: 1.25rem;
 }
 
 /* ── Links ── */

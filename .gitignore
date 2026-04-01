@@ -1,6 +1,9 @@
 # Dev server
 server.py
 
+# Profile photo (add manually to your deployment branch)
+CZ_photo.jpeg
+
 # Claude Code local config
 .claude/
 
