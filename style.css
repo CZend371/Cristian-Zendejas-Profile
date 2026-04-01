@@ -1,11 +1,23 @@
 :root {
   --bg: #0f0f13;
   --bg-surface: #16161d;
-  --text: #e2e2e2;
+  --text: #ffffff;
   --text-muted: #9ca3af;
   --accent: #6366f1;
   --accent-hover: #818cf8;
   --border: #2a2a35;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f5f5fa;
+    --bg-surface: #ffffff;
+    --text: #1a1a2e;
+    --text-muted: #6b7280;
+    --accent: #4f46e5;
+    --accent-hover: #6366f1;
+    --border: #dde0f0;
+  }
 }
 
 *, *::before, *::after {
@@ -53,6 +65,26 @@ body {
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   color: var(--accent);
   font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+/* ── Profile Photo Placeholder ── */
+.profile-photo {
+  width: 128px;
+  height: 128px;
+  border-radius: 1rem;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: var(--text-muted);
+}
+
+.profile-photo svg {
+  width: 52px;
+  height: 52px;
 }
 
 /* ── Shared section styles ── */
@@ -75,6 +107,92 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* ── Wide container variant ── */
+.container--wide {
+  max-width: 860px;
+}
+
+/* ── Projects Carousel ── */
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  padding: 2.5rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.project-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.carousel-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.carousel-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: var(--border);
+  transition: background-color 0.25s ease;
+}
+
+.dot.active {
+  background-color: var(--accent);
+}
+
 /* ── Bio ── */
 .bio-text {
   font-size: 1.0625rem;
@@ -93,7 +211,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.625rem 1rem;
   background-color: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
@@ -111,8 +229,8 @@ body {
 }
 
 .link-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 0.875rem;
+  height: 0.875rem;
   flex-shrink: 0;
 }
 
